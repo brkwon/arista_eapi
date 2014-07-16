@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # Arista EAPI caller main program
 # 2014-07 by boram.kwon@kt.com
 
