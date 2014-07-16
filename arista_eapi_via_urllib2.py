@@ -44,7 +44,7 @@ if answer == "y":
         print(show_vlan(switch, username, password))
         
         while True:
-            vlans = raw_input("\nEnter VLAN (1-4094), else enter 'end' to finish = ")
+            vlans = raw_input("\nEnter VLAN (2-4094), else enter 'end' to finish = ")
 
             if vlans.isdigit() == True and 1 < int(vlans) < 4095:
                 if check_vlan(switch, username, password, vlans) == True:

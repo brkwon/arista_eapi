@@ -16,7 +16,6 @@ def jsonCreate(eapi_command, enable_password):
     else:
         enableCmd["input"] = enable_password
         jsonCmd["params"]["cmds"] = [enableCmd] + eapi_command
-        print(jsonCmd)
         return jsonCmd
 
 # HTTP REST request function for eAPI call 
@@ -56,7 +55,7 @@ def show_vlan(switch, username, password):
     
     return result
 
-# Check if specified VLAN is in switch or not
+# Check if supplied VLAN is in switch or not
 def check_vlan(switch, username, password, vlans):
     # Create JSON eapi-command
     json_data = jsonCreate("show vlan", None)
@@ -81,7 +80,6 @@ def add_vlan(switch, username, password, enable_password, vlans):
     jsonCmds = json.dumps(json_data)
 
     response = switchReq(switch, username, password, jsonCmds)
-    print response
 
 # Delete VLAN to a switch
 def del_vlan(switch, username, password, enable_password, vlans):
@@ -90,5 +88,4 @@ def del_vlan(switch, username, password, enable_password, vlans):
     jsonCmds = json.dumps(json_data)
 
     response = switchReq(switch, username, password, jsonCmds)
-    print response
 
