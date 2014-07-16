@@ -25,6 +25,7 @@ while True:
         break
     if ip_address_is_valid(switch) == False:
         print ("Your input \' " +switch+ "\' is invalid IP")
+        continue
     switches.append(switch)
 
 # Print out all the VLANs from switches
