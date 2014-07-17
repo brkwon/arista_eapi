@@ -4,7 +4,8 @@ from jsonrpclib import Server
 
 # Basic urlString for all functions
 def switchReq(switch, username, password):
-    urlString = "http://{}:{}@{}/command-api".format(username, password, switch)
+    credential = username+ ":" +password+ "@" +switch
+    urlString = "http://" +credential+ "/command-api"
     return Server( urlString )
 
 # display switchs' vlans

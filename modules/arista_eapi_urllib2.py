@@ -20,7 +20,8 @@ def jsonCreate(eapi_command, enable_password):
 
 # HTTP REST request function for eAPI call 
 def switchReq(switch, username, password, jsonCmds):
-    urlString = "http://{}/command-api".format(switch)
+    credential = switch
+    urlString = "http://" +credential+ "/command-api"
     password_manager = urllib2.HTTPPasswordMgrWithDefaultRealm()
     password_manager.add_password(None, urlString, username, password)
     
